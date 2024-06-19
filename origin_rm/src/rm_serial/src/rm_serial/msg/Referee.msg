@@ -1,0 +1,9 @@
+uint16 remain_HP
+uint16 max_HP
+uint8 game_type
+uint8 game_progress
+uint16 stage_remain_time
+uint16 coin_remaining_num
+uint16 bullet_remaining_num_17mm
+uint32 rfid_status
+Game_HP Game_Robot_HP

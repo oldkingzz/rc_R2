@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="jxb">
+    <link name="base_link">
+        <inertial>
+            <origin xyz="-6.93889390390723E-18 -4.16333634234434E-17 0.00399999999999999" rpy="0 0 0" />
+            <mass value="0.153475597587289" />
+            <inertia ixx="0.000186330399541598" ixy="2.66158779793828E-36" ixz="-1.05402590153209E-36" iyy="0.000186330399541597" iyz="-7.67976538843893E-22" izz="0.000371102380815762" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://jxb/meshes/base_link.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.647058823529412 0.619607843137255 0.588235294117647 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://jxb/meshes/base_link.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="revolute_Link">
+        <inertial>
+            <origin xyz="0.0124566225568641 0.000458971677648648 -0.039912758858774" rpy="0 0 0" />
+            <mass value="0.410583424146844" />
+            <inertia ixx="0.000665554904535447" ixy="-4.5279703278626E-07" ixz="-3.09912734800465E-07" iyy="0.000398133344441621" iyz="-1.29891957891598E-06" izz="0.000890018946923409" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://jxb/meshes/revolute_Link.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://jxb/meshes/revolute_Link.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="base_revolute_joint" type="revolute">
+        <origin xyz="0 0 0.1" rpy="0 0 0" />
+        <parent link="base_link" />
+        <child link="revolute_Link" />
+        <axis xyz="0 0 -1" />
+        <limit lower="-3.14" upper="3.14" effort="12" velocity="3.2" />
+    </joint>
+    <link name="upperarm_link">
+        <inertial>
+            <origin xyz="0.0136318771798145 0.00416624377686392 0.25037061844501" rpy="0 0 0" />
+            <mass value="0.301174356022918" />
+            <inertia ixx="0.00199729929163699" ixy="-9.55646792101377E-09" ixz="-1.27061142507494E-08" iyy="0.00193611239453495" iyz="-3.5878328422664E-06" izz="9.53014074429192E-05" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://jxb/meshes/upperarm_link.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://jxb/meshes/upperarm_link.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="revolute_upperarm_joint" type="revolute">
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <parent link="revolute_Link" />
+        <child link="upperarm_link" />
+        <axis xyz="1 0 0" />
+        <limit lower="-1.57" upper="1.57" effort="12" velocity="3.2" />
+    </joint>
+    <link name="forearm_link">
+        <inertial>
+            <origin xyz="0.0048173419014557 0.00686836178665534 0.308305186307875" rpy="0 0 0" />
+            <mass value="0.19374597843087" />
+            <inertia ixx="0.00436090713872445" ixy="2.02148645291639E-12" ixz="-2.88473252548049E-10" iyy="0.00432833208916551" iyz="-3.58638277652162E-06" izz="4.73372541612996E-05" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://jxb/meshes/forearm_link.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://jxb/meshes/forearm_link.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="upperarm_forearm_joint" type="revolute">
+        <origin xyz="-0.0005 0 0.35" rpy="0 0 0" />
+        <parent link="upperarm_link" />
+        <child link="forearm_link" />
+        <axis xyz="1 0 0" />
+        <limit lower="0" upper="2.6" effort="12" velocity="3.2" />
+    </joint>
+    <link name="endeffect_link">
+        <inertial>
+            <origin xyz="0.00140883517980962 -0.139881997706329 0.0761633758197195" rpy="0 0 0" />
+            <mass value="3.7919686773511" />
+            <inertia ixx="0.0130661265759368" ixy="-3.65279130953156E-10" ixz="-3.39277221668891E-07" iyy="0.0131267906667484" iyz="3.00958953944123E-07" izz="0.0130589218639229" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://jxb/meshes/endeffect_link.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://jxb/meshes/endeffect_link.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="forearm_endeffect_joint" type="revolute">
+        <origin xyz="0 0 0.55" rpy="0 0 0" />
+        <parent link="forearm_link" />
+        <child link="endeffect_link" />
+        <axis xyz="-1 0 0" />
+        <limit lower="-0.785" upper="1.57" effort="12" velocity="3.2" />
+    </joint>
+    <transmission name="trans_base_revolute_joint">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="base_revolute_joint">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="base_revolute_joint_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_revolute_upperarm_joint">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="revolute_upperarm_joint">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="revolute_upperarm_joint_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_upperarm_forearm_joint">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="upperarm_forearm_joint">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="upperarm_forearm_joint_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_forearm_endeffect_joint">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="forearm_endeffect_joint">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="forearm_endeffect_joint_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <gazebo>
+        <plugin name="gazebo_ros_control">
+            <robotNamespace>/</robotNamespace>
+        </plugin>
+    </gazebo>
+</robot>
+

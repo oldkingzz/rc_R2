@@ -1,0 +1,6 @@
+image: /home/dr3/robocon/origin_rm/map/map_robocon.png
+resolution: 0.050000
+origin: [-1.474, -2.3075, 0]
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196

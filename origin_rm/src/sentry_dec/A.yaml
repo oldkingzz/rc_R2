@@ -1,0 +1,6 @@
+repeat: false
+change: B
+aim_first: false
+steps: 
+  - "point 10.74 -3.60"
+  - "point -14.87 -4.78"

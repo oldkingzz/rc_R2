@@ -1,0 +1,7 @@
+<launch>
+
+  <node pkg="livox_repub" type="livox_repub" name="livox_repub" output="screen" >
+
+  </node>
+
+</launch>

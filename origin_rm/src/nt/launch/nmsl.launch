@@ -1,0 +1,15 @@
+<launch>
+    <!-- Start usb_cam -->
+    <include file="$(find usb_cam)/launch/usb_cam-test.launch" />
+    <include file="$(find nt)/launch/demo.launch" />
+
+    <!-- Start nt/cnmdsbmoveit.py -->
+    <node name="cnmdsbmoveit" pkg="nt" type="cnmdsbmoveit.py" output="screen" />
+
+    <!-- Start nt/position1.py -->
+    <!-- Start nt/ik2.py -->
+    <node name="ik2" pkg="nt" type="ik2.py" output="screen" />
+
+    <node name="position1" pkg="nt" type="position1.py" output="screen" />
+</launch>
+

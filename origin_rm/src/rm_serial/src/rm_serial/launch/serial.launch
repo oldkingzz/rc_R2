@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="rm_serial" type="rm_serial_subpub.py" name="serial" output="screen"/>
+    <node pkg="rm_serial" type="send_cmd_vel.py" name="move_cmd" output="screen"/>
+</launch>

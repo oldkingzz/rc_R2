@@ -1,0 +1,19 @@
+uint16 red_1_Robot_HP
+uint16 red_2_Robot_HP
+uint16 red_3_Robot_HP
+uint16 red_4_Robot_HP
+uint16 red_5_Robot_HP
+uint16 red_7_Robot_HP
+uint16 red_outpost_HP
+uint16 red_base_HP
+
+uint16 blue_1_Robot_HP
+uint16 blue_2_Robot_HP
+uint16 blue_3_Robot_HP
+uint16 blue_4_Robot_HP
+uint16 blue_5_Robot_HP
+uint16 blue_7_Robot_HP
+uint16 blue_outpost_HP
+uint16 blue_base_HP
+
+

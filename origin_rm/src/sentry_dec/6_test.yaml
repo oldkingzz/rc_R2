@@ -1,0 +1,6 @@
+repeat: true
+change: None
+aim_first: true
+steps: 
+  - "point -0.17802166938781738 2.3019127559661865"
+  - "point 4.2087554931640625 1.5283899307250977"

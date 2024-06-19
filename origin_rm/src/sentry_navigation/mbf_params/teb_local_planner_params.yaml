@@ -1,0 +1,222 @@
+dictitems:
+  acc_lim_theta: 0.3
+  acc_lim_x: 8.0
+  acc_lim_y: 4.0
+  allow_init_with_backwards_motion: true
+  cmd_angle_instead_rotvel: false
+  control_look_ahead_poses: 1
+  costmap_obstacles_behind_robot_dist: 2.0
+  divergence_detection_enable: false
+  divergence_detection_max_chi_squared: 10.0
+  dt_hysteresis: 0.1
+  dt_ref: 0.45
+  dynamic_obstacle_inflation_dist: 0.01
+  enable_multithreading: true
+  exact_arc_length: true
+  feasibility_check_lookahead_distance: -1.0
+  feasibility_check_no_poses: 5
+  force_reinit_new_goal_angular: 0.78
+  force_reinit_new_goal_dist: 1.0
+  free_goal_vel: false
+  global_plan_overwrite_orientation: false
+  global_plan_viapoint_sep: 0.408
+
+  free_goal_vel: false
+
+  name: GoalTolerance
+  theta_stopped_vel: 0.1
+  trans_stopped_vel: 0.1
+  xy_goal_tolerance: 0.2
+  yaw_goal_tolerance: 0.2
+
+  dictitems:
+    enable_multithreading: true
+    h_signature_prescaler: 0.5
+    h_signature_threshold: 0.1
+    max_number_classes: 1
+    max_number_plans_in_current_class: 1
+    name: HCPlanning
+    obstacle_heading_threshold: 0.45
+    roadmap_graph_area_length_scale: 1.0
+    roadmap_graph_area_width: 5.0
+    roadmap_graph_no_samples: 15
+    selection_alternative_time_cost: false
+    selection_cost_hysteresis: 1.0
+    selection_dropping_probability: 0.0
+    selection_obst_cost_scale: 1.0
+    selection_prefer_initial_plan: 0.95
+    selection_viapoint_cost_scale: 1.0
+    switching_blocking_period: 0.0
+    viapoints_all_candidates: true
+    visualize_hc_graph: false
+
+  dictitems:
+    costmap_obstacles_behind_robot_dist: 2.0
+    dynamic_obstacle_inflation_dist: 0.01
+
+    name: Reduce_velocity_near_obstacles
+    obstacle_proximity_lower_bound: 0.0
+    obstacle_proximity_ratio_max_vel: 1.0
+    obstacle_proximity_upper_bound: 0.5
+
+  include_costmap_obstacles: true
+  include_dynamic_obstacles: true
+  inflation_dist: 0.01
+  legacy_obstacle_association: false
+  min_obstacle_dist: 0.01
+  name: Obstacles
+  obstacle_association_cutoff_factor: 5.0
+  obstacle_association_force_inclusion_factor: 1.5
+  obstacle_poses_affected: 30
+
+  name: Optimization
+  no_inner_iterations: 5
+  no_outer_iterations: 4
+  obstacle_cost_exponent: 4.0
+  optimization_activate: true
+  optimization_verbose: false
+  penalty_epsilon: 0.148
+  weight_acc_lim_theta: 3.0
+  weight_acc_lim_x: 3.0
+  weight_acc_lim_y: 1.0
+  weight_adapt_factor: 2.0
+  weight_dynamic_obstacle: 0.001
+  weight_dynamic_obstacle_inflation: 0.2
+  weight_inflation: 10.0
+  weight_kinematics_forward_drive: 10000.0
+  weight_kinematics_nh: 10000.0
+  weight_kinematics_turning_radius: 1000.0
+  weight_max_vel_theta: 2.0
+  weight_max_vel_x: 13.0
+  weight_max_vel_y: 8.0
+  weight_obstacle: 80.0
+  weight_optimaltime: 20.0
+  weight_shortest_path: 100.0
+  weight_velocity_obstacle_ratio: 0.0
+  weight_viapoint: 20.0
+
+  name: Divergence_Detection
+  divergence_detection_enable: false
+  divergence_detection_max_chi_squared: 10.0
+
+  name: Recovery
+  oscillation_recovery: true
+  shrink_horizon_backup: true
+
+  dictitems:
+    acc_lim_theta: 0.3
+    acc_lim_x: 8.0
+    cmd_angle_instead_rotvel: false
+    min_turning_radius: 0.0
+    name: Carlike
+    wheelbase: 1.0
+
+  dictitems:
+    acc_lim_y: 4.0
+    max_vel_trans: 0.8
+    max_vel_y: 0.0
+    name: Omnidirectional
+
+  is_footprint_dynamic: false
+  max_vel_theta: 0.3
+  max_vel_x: 1.5
+  max_vel_x_backwards: 1.5
+  name: Robot
+  transform_tolerance: 0.5
+  use_proportional_saturation: false
+
+  dictitems:
+    allow_init_with_backwards_motion: true
+    control_look_ahead_poses: 1
+    dt_hysteresis: 0.1
+    dt_ref: 0.45
+    exact_arc_length: true
+    feasibility_check_lookahead_distance: -1.0
+    feasibility_check_no_poses: 5
+    force_reinit_new_goal_angular: 0.78
+    force_reinit_new_goal_dist: 1.0
+    global_plan_overwrite_orientation: false
+    max_global_plan_lookahead_dist: 3.0
+    name: Trajectory
+    prevent_look_ahead_poses_near_goal: 0
+    publish_feedback: false
+    teb_autosize: true
+    visualize_with_time_as_z_axis_scale: 0.0
+
+  dictitems:
+    global_plan_viapoint_sep: 0.408
+    name: ViaPoints
+    via_points_ordered: true
+
+name: Default
+
+h_signature_prescaler: 0.5
+h_signature_threshold: 0.1
+include_costmap_obstacles: true
+include_dynamic_obstacles: true
+inflation_dist: 0.01
+is_footprint_dynamic: false
+legacy_obstacle_association: false
+max_global_plan_lookahead_dist: 3.0
+max_number_classes: 1
+max_number_plans_in_current_class: 1
+max_vel_theta: 0.3
+max_vel_trans: 0.8
+max_vel_x: 1.5
+max_vel_x_backwards: 1.5
+max_vel_y: 0.0
+min_obstacle_dist: 0.01
+min_turning_radius: 0.0
+no_inner_iterations: 5
+no_outer_iterations: 4
+obstacle_association_cutoff_factor: 5.0
+obstacle_association_force_inclusion_factor: 1.5
+obstacle_cost_exponent: 4.0
+obstacle_heading_threshold: 0.45
+obstacle_poses_affected: 30
+obstacle_proximity_lower_bound: 0.0
+obstacle_proximity_ratio_max_vel: 1.0
+obstacle_proximity_upper_bound: 0.5
+optimization_activate: true
+optimization_verbose: false
+oscillation_recovery: true
+penalty_epsilon: 0.148
+prevent_look_ahead_poses_near_goal: 0
+publish_feedback: false
+roadmap_graph_area_length_scale: 1.0
+roadmap_graph_area_width: 5.0
+roadmap_graph_no_samples: 15
+selection_alternative_time_cost: false
+selection_cost_hysteresis: 1.0
+selection_dropping_probability: 0.0
+selection_obst_cost_scale: 1.0
+selection_prefer_initial_plan: 0.95
+selection_viapoint_cost_scale: 1.0
+switching_blocking_period: 0.0
+teb_autosize: true
+transform_tolerance: 0.5
+use_proportional_saturation: false
+via_points_ordered: true
+visualize_hc_graph: false
+visualize_with_time_as_z_axis_scale: 0.0
+weight_acc_lim_theta: 3.0
+weight_acc_lim_x: 3.0
+weight_acc_lim_y: 1.0
+weight_adapt_factor: 2.0
+weight_dynamic_obstacle: 0.001
+weight_dynamic_obstacle_inflation: 0.2
+weight_inflation: 10.0
+weight_kinematics_forward_drive: 10000.0
+weight_kinematics_nh: 10000.0
+weight_kinematics_turning_radius: 1000.0
+weight_max_vel_theta: 2.0
+weight_max_vel_x: 13.0
+weight_max_vel_y: 8.0
+weight_obstacle: 80.0
+weight_optimaltime: 20.0
+weight_shortest_path: 100.0
+weight_velocity_obstacle_ratio: 0.0
+weight_viapoint: 20.0
+wheelbase: 1.0
+xy_goal_tolerance: 0.2
+yaw_goal_tolerance: 0.2

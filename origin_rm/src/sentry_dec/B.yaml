@@ -1,0 +1,6 @@
+repeat: true
+change: None
+aim_first: true
+steps: 
+  - "point 7.67 2.0"
+  - "point 7.67 5.0"

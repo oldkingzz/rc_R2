@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: jxb
+    relative_path: urdf/jxb.urdf
+    xacro_args: ""
+  SRDF:
+    relative_path: config/jxb.srdf
+  CONFIG:
+    author_name: wzs
+    author_email: wzs@gmail.com
+    generated_timestamp: 1716813111

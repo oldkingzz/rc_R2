@@ -1,0 +1,16 @@
+controller_list:
+  - name: arm_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - base_revolute_joint
+      - revolute_upperarm_joint
+      - upperarm_forearm_joint
+      - forearm_endeffect_joint
+  - name: gripper_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - forearm_endeffect_joint

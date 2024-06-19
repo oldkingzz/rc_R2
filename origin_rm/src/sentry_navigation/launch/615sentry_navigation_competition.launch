@@ -1,0 +1,39 @@
+<launch>
+    <include file="$(find livox_ros_driver2)/launch_ROS1/msg_MID360.launch">  </include>
+       <!--发布用于建图、导航的TF关系与小车外形可视化 -->
+    <include file="$(find sentry_navigation)/launch/robot_model_visualization.launch">
+      <arg name="mode" value="RMUL"/>
+    </include>
+
+  <!--node name='pointcloud_filter' pkg="sentry_navigation" type="pointcloud2_filter"/-->
+
+  <include file="$(find point_lio)/launch/mapping_mid360.launch">
+    <arg name="rviz" value="false"/>
+  </include>
+  
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find sentry_navigation)/rviz/amcl3d.rviz" /> 
+
+  <!--node name='odom_trans' pkg="sentry_navigation" type="odom_transform"/-->
+  <!--node name='vision_transform' pkg="sentry_navigation" type="vision_transform"/-->
+  <!-- <node name='enemy_position' pkg="sentry_navigation" type="enemy_position"/> -->
+
+    <!-- 设置需要用于导航的地图 -->
+   <!-- <arg name="map_file" default="/home/dr3/origin_rm/map/map6_n.yaml"/> -->
+  <arg name="map_file" default="/home/dr3/robocon/origin_rm/map/test_map.yaml"/> 
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)">
+  <param name="frame_id" value="map" />
+  </node> 
+
+  <include file="$(find sentry_navigation)/launch/move_base_flex.launch"/>
+  <!--include file="$(find pointcloud_to_laserscan)/launch/sample_node.launch"/>
+  <include file="$(find sentry_navigation)/launch/amcl_omni.launch" /-->
+  
+  <!--include file="$(find livox_dedistortion_pkg)/launch/run.launch"/--> 
+
+  <node name='goal_pub' pkg="sentry_navigation" type="goal_pub.py" output="screen" respawn="true"/> 
+
+  <!--node pkg="robot_serial" type="send_cmd_vel.py" name="send_cmd_vel" output="screen"/-->
+ <include file="$(find nt)/launch/demo.launch">
+  </include>
+    <!--rosparam file="$(find sentry_dec)/src/B.yaml" command="load" /-->
+</launch>
